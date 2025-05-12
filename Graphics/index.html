@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preferencias de Snacks</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/FrutiCrunch/Assets/styles.css">
+  
+  <style>
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #e0c7a1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .chart-container {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 30px;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .chart-wrapper {
+      position: relative;
+      height: 450px;
+      margin: 0 auto 30px;
+      overflow-x: auto;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    .legend-color {
+      width: 15px;
+      height: 15px;
+      border-radius: 3px;
+      margin-right: 8px;
+      display: inline-block;
+    }
+
+    @media (max-width: 600px) {
+      .chart-container {
+        padding: 20px 15px;
+      }
+
+      .chart-wrapper {
+        height: 350px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+
+    <!-- Gráfico de pastel - Precios -->
+    <div class="chart-container">
+      <h1>Rango de precios de snacks</h1>
+      <div class="chart-wrapper">
+        <canvas id="priceChart"></canvas>
+      </div>
+      <div class="legend" id="priceLegend"></div>
+    </div>
+
+    <!-- Gráfico de barras - Preferencias -->
+    <div class="chart-container">
+      <h1>Preferencias de sabores</h1>
+      <div class="chart-wrapper">
+        <canvas id="preferenceChart"></canvas>
+      </div>
+      <div class="legend" id="preferenceLegend"></div>
+    </div>
+  </main>
+
+  <script>
+    // GRÁFICO DE PASTEL (Precios)
+    const priceCtx = document.getElementById('priceChart').getContext('2d');
+
+    const priceData = {
+      labels: ['$5-$9', '$10-$14', '$15-$19', '$20-$24', '$25-$29', '$30-$35', 'Más de $35'],
+      datasets: [{
+        data: [16.7, 26.7, 15, 12, 10, 8, 11.6],
+        backgroundColor: ['#3498db', '#2ecc71', '#e74c3c', '#f39c12', '#9b59b6', '#1abc9c', '#e67e22'],
+        borderWidth: 1,
+        borderColor: '#fff'
+      }]
+    };
+
+    new Chart(priceCtx, {
+      type: 'pie',
+      data: priceData,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                return `${context.label}: ${context.raw}%`;
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // Leyenda de Precios
+    const priceLegend = document.getElementById('priceLegend');
+    priceData.labels.forEach((label, i) => {
+      const item = document.createElement('div');
+      item.className = 'legend-item';
+
+      const colorBox = document.createElement('span');
+      colorBox.className = 'legend-color';
+      colorBox.style.backgroundColor = priceData.datasets[0].backgroundColor[i];
+
+      const text = document.createTextNode(`${label}: ${priceData.datasets[0].data[i]}%`);
+      item.appendChild(colorBox);
+      item.appendChild(text);
+      priceLegend.appendChild(item);
+    });
+
+    // GRÁFICO DE BARRAS (Preferencias)
+    const prefCtx = document.getElementById('preferenceChart').getContext('2d');
+
+    const prefData = {
+      labels: ['No me gustan', 'Puedo comerlas', 'Me gustan poco', 'Muy buenas', 'Mis favoritas'],
+      datasets: [
+        { label: 'Muy picosas', data: [5, 15, 30, 25, 25], backgroundColor: '#e74c3c' },
+        { label: 'Picosas', data: [3, 12, 35, 30, 20], backgroundColor: '#e67e22' },
+        { label: 'Poco picosas', data: [2, 10, 25, 35, 28], backgroundColor: '#f39c12' },
+        { label: 'Agridulces', data: [1, 8, 22, 40, 29], backgroundColor: '#2ecc71' },
+        { label: 'Sabor a queso', data: [2, 5, 18, 35, 40], backgroundColor: '#3498db' },
+        { label: 'Dulces', data: [10, 20, 30, 25, 15], backgroundColor: '#9b59b6' },
+        { label: 'Ácidas', data: [15, 25, 30, 20, 10], backgroundColor: '#1abc9c' },
+        { label: 'Chile y limón', data: [5, 15, 30, 30, 20], backgroundColor: '#27ae60' },
+        { label: 'Picante con limón', data: [8, 20, 32, 25, 15], backgroundColor: '#d35400' }
+      ]
+    };
+
+    new Chart(prefCtx, {
+      type: 'bar',
+      data: prefData,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            stacked: true,
+            title: {
+              display: true,
+              text: 'Nivel de preferencia'
+            },
+            ticks: {
+              maxRotation: 45,
+              minRotation: 30
+            }
+          },
+          y: {
+            stacked: true,
+            max: 100,
+            title: {
+              display: true,
+              text: 'Porcentaje (%)'
+            },
+            ticks: {
+              callback: function (value) {
+                return value + '%';
+              }
+            }
+          }
+        },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                return `${context.dataset.label}: ${context.raw}%`;
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // Leyenda de Preferencias
+    const prefLegend = document.getElementById('preferenceLegend');
+    prefData.datasets.forEach((dataset) => {
+      const item = document.createElement('div');
+      item.className = 'legend-item';
+
+      const colorBox = document.createElement('span');
+      colorBox.className = 'legend-color';
+      colorBox.style.backgroundColor = dataset.backgroundColor;
+
+      const text = document.createTextNode(dataset.label);
+      item.appendChild(colorBox);
+      item.appendChild(text);
+      prefLegend.appendChild(item);
+    });
+  </script>
+</body>
+</html>

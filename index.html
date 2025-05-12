@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruti Crunch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Assets/styles.css">
+
+    <!-- Fuentes-->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <section id="Navbar">
+            <!-- Navbar debe estar preferiblemente al inicio del body -->
+            <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+              <div class="container-fluid px-3">
+                <a class="navbar-brand me-auto" href="#Home">
+                  <img src="./Images/Logo.png" alt="Logo" height="40" width="45" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#Home" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="#Products" class="nav-link">Productos</a></li>
+                    <li class="nav-item"><a href="#Nosotros" class="nav-link">Nosotros</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+      </section>
+
+    <!-- Home -->
+
+    <section id="Home" style="margin: 0; padding: 0;">
+        <div class="px-4 py-5 text-center" style="padding-top: 0 !important;">
+            <img class="d-block mx-auto" src="./Images/Logo.png" alt="Logo" width="400" height="400">
+            <h1 class="display-5 fw-bold text-body-emphasis mb-5">Naturalmente delicioso.</h1>
+            <div class="col-lg-6 mx-auto">
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-lg px-4 gap-3 custom-button"> <a href="#Products" class="nav-link" style="color: #ffffff !important;">Conocer productos.</button></a>
+                </div>
+            </div>
+            </div>
+            <img src="Images/wave.svg" alt="wave">
+    </section>
+
+
+        <!-- Productos-->
+
+        <section id="Products">
+
+            <h2 class="leading-6 text-blueTitle text-2xl text-center font-medium lg:text-5xl lg:leading-none py-3">
+                <br> <span class="fondo-texto"> Nuestros productos</span>
+            </h2>
+            <p class="text-gray text-center lg:w-3/4 lg:mx-auto py-3">Nuestra propuesta ofrece una alternativa nutritiva, práctica y deliciosa, ideal para quienes buscan una opción rápida sin comprometer la calidad ni el sabor.</p>
+
+            
+            <div class="container" id="contenedor_sabores">
+                <div class="image-accordion">
+                    <div class="accordion-item" style="background-image: url('Images/Papas/1.svg');">
+                        <div class="accordion-content">
+                            <h3>Manzana</h3>
+                        </div>
+                    </div>
+                    <div class="accordion-item" style="background-image: url('Images/Papas/2.svg');">
+                        <div class="accordion-content">
+                            <h3>Mango</h3>
+                        </div>
+                    </div>
+                    <div class="accordion-item" style="background-image: url('Images/Papas/3.svg'); border-radius: 8px;">
+                        <div class="accordion-content" style="border-radius: 8px;">
+                            <h3>Plátano</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="leading-6 text-blueTitle text-2xl text-center font-medium lg:text-5xl lg:leading-none py-3">
+                <br> <span class="fondo-texto"> Proceso de elaboración</span>
+            </h2>
+
+            <section style="background-color: #f5ae40;">
+                <div class="container py-5">
+                  <div class="main-timeline">
+                    <div class="timeline left">
+                      <div class="card">
+                        <div class="card-body p-4">
+                          <h3>1. Selección de frutas</h3>
+                          <p class="mb-0" style="color: black !important;">Elegimos frutas frescas y de temporada: manzana, plátano y jícama.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="timeline right">
+                      <div class="card">
+                        <div class="card-body p-4">
+                          <h3>2. Preparación de frutas</h3>
+                          <p class="mb-0" style="color: black !important;">Lavamos, pelamos y rebanamos las frutas en rodajas delgadas para un secado uniforme.                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="timeline left">
+                      <div class="card">
+                        <div class="card-body p-4">
+                          <h3>3. Deshidratación</h3>
+                          <p class="mb-0" style="color: black !important;">Utilizamos técnicas de secado solar o deshidratador para eliminar la humedad, conservando sabor y nutrientes.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="timeline right">
+                      <div class="card">
+                        <div class="card-body p-4">
+                          <h3>4. Adición de saborizantes</h3>
+                          <p class="mb-0" style="color: black !important;">Agregamos chile en polvo natural o saborizantes dulces/agridulces para crear diferentes combinaciones.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="timeline left">
+                      <div class="card">
+                        <div class="card-body p-4">
+                          <h3>5. Prensado opcional</h3>
+                          <p class="mb-0" style="color: black !important;">En algunos casos, prensamos ligeramente para darles una textura más crujiente.                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="timeline right">
+                      <div class="card">
+                        <div class="card-body p-4">
+                          <h3>6. Empacado</h3>
+                          <p class="mb-0" style="color: black !important;">Colocamos la fruta deshidratada en bolsas stand-up pouch ecológicas, herméticas y atractivas visualmente.                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="timeline left">
+                        <div class="card">
+                          <div class="card-body p-4">
+                            <h3>7. Distribución</h3>
+                            <p class="mb-0" style="color: black !important;">El producto final se distribuye en puntos estratégicos dentro de la Facultad de Ingeniería Química.                            </p>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </section>
+
+            <!-- Sabores -->
+            <br>
+            <br>
+
+
+
+            <img src="Images/wave2.svg" alt="wave2">
+    
+        </section>
+
+    <!-- Nosotros-->
+
+    <section id="Nosotros">
+
+        <h2 class="leading-6 text-blueTitle text-2xl text-center font-medium lg:text-5xl lg:leading-none py-5">
+            <br> <span class="fondo-texto2"> Nuestro equipo</span>
+        </h2>
+
+        <div class="row row-cols-2 row-cols-md-4 g-4">
+
+            <div class="col p-3 text-center">
+              <img src="Images/Xime.png" alt="Descripción de la imagen" class="rounded-circle" width="140" height="140">
+              <h2 class="fw-normal mt-3">Ximena Aco <br> Vera</h2>
+              <ul class="list-unstyled d-inline-block text-start">
+                <li>Especialista</li>
+                <li>Cohesionadora</li>
+              </ul>
+            </div>
+        
+            <div class="col p-3 text-center">
+              <img src="Images/Areli.png" alt="Descripción de la imagen" class="rounded-circle" width="140" height="140">
+              <h2 class="fw-normal mt-3">Areli de Rosas <br> Alvarez</h2>
+              <ul class="list-unstyled d-inline-block text-start">
+                <li>Cerebro</li>
+                <li>Evaluadora</li>
+              </ul>
+            </div>
+        
+            <div class="col p-3 text-center">
+              <img src="Images/Bro.png" alt="Descripción de la imagen" class="rounded-circle" width="140" height="140">
+              <h2 class="fw-normal mt-3">Juan Pablo <br> González Moreno</h2>
+              <ul class="list-unstyled d-inline-block text-start">
+                <li>Finalizador</li>
+                <li>Coordinador</li>
+              </ul>
+            </div>
+        
+            <div class="col p-3 text-center">
+              <img src="Images/Sis.png" alt="Descripción de la imagen" class="rounded-circle" width="140" height="140">
+              <h2 class="fw-normal mt-3">Yazmin Magaly <br> Bolaños Jimenez</h2>
+              <ul class="list-unstyled d-inline-block text-start">
+                <li>Investigadora</li>
+                <li>Implementadora</li>
+              </ul>
+            </div>
+        
+          </div>
+
+          <br>
+
+          <h2 class="leading-6 text-blueTitle text-2xl text-center font-medium lg:text-5xl lg:leading-none py-3">
+            <br> <span class="fondo-texto2"> Nuestros valores</span>
+        </h2>
+        <br>
+    
+        <div class="container_valores">
+            <!-- Tarjeta 1 -->
+            <div class="quality-card">
+              <div class="quality-content">
+                <div class="quality-icon">
+                  <img src="Images/Responsabilidad.svg" alt="Responsabilidad" height="100px">
+                </div>
+                <div class="quality-text">
+                  <h3>Responsabilidad</h3>
+                  <p>Con el ambiente por nuestro empaque sustentable y con nuestros consumidores.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tarjeta 2 -->
+            <div class="quality-card" style="background-color: #fcc94b;">
+              <div class="quality-content">
+                <div class="quality-icon">
+                  <img src="Images/Honesty.svg" alt="Calidad" height="100px">
+                </div>
+                <div class="quality-text">
+                  <h3>Honestidad</h3>
+                  <p>Transparencia en los ingredientes reportados en la etiqueta.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tarjeta 3 -->
+            <div class="quality-card" style="background-color: #cfd871;">
+              <div class="quality-content">
+                <div class="quality-icon">
+                  <img src="Images/innovation.svg" alt="Innovación" height="100px">
+                </div>
+                <div class="quality-text">
+                  <h3>Innovación</h3>
+                  <p>Buscamos constantemente nuevas formas de mejorar nuestros productos y procesos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mission-container">
+            <div class="mission-row">
+              <!-- Columna de imagen -->
+              <div class="mission-image-col">
+                <div class="mission-image-wrapper">
+                  <img src="Images/Bowl.svg" 
+                       alt="fruta deshidratada de camote enchilado" 
+                       class="mission-image"
+                       loading="lazy">
+                </div>
+              </div>
+              
+              <!-- Columna de texto -->
+              <div class="mission-text-col">
+                <div class="mission-content">
+                  <h2>Misión</h2>
+                  <p>Promover una alimentación nutritiva responsable con el medio ambiente, apoyándonos de prácticas sustentables fomentando el bienestar de nuestros consumidores.</p>
+                  
+                  <h2>Visión</h2>
+                    <p>Convertirnos en la primera opción de snacks saludables en la facultad de ingeniería química, destacándonos por nuestra innovación, calidad y compromiso.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-lg px-4 gap-3 custom-button"> <a href="/FrutiCrunch/Graphics/index.html" class="nav-link" style="color: #ffffff !important;">Resultados encuestas</button></a>
+            </div>
+
+            <br>
+            <br>
+
+    </section>
+
+    <a href="https://wa.me/+527971130412?text=%C2%A1Hola%21%20Me%20gustar%C3%ADa%20comprar%20uno%20de%20sus%20productos%20de%20FrutiCrunch.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%2C%20por%20favor%3F" class="whatsapp-float" target="_blank" aria-label="Chatea en WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
+    </a>
+    
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="Images/Logo.png" alt="Logo FrutiCrunch">
+    </div>
+    <div class="footer-description">
+      <p>
+        En FrutiCrunch nos dedicamos a crear botanas naturales y deliciosas, pensadas para que disfrutes un sabor auténtico en cada bocado. Trabajamos con ingredientes como manzana, plátano y mango para ofrecerte opciones saludables y de alta calidad.
+
+        Si estás interesado en adquirir nuestros productos al mayoreo o colaborar con nosotros, no dudes en escribirnos.      </p>
+      <p>
+    </div>
+    <div class="footer-contact">
+      <p><i class="fas fa-phone"></i> +52 797 113 0412</p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:xacovera@gmail.com">xacovera@gmail.com</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Ciudad Universitaria Av. Sn, Claudio y Boulevard 18 Sur Col, Jardines de San Manuel, 72570 Heroica Puebla de Zaragoza, Pue.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p>Copyright © 2025 - FrutiCrunch</p>
+  </div>
+</footer>
+
+
+    <script src="./Assets/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
